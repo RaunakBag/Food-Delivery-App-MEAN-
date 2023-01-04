@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr.css';
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    --navbar-scroll: transparent; 
+    --navbar-scroll-text: white;
+    --navbar-scroll-shadow: none;
+   }
+   body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body:not(.dark-mode-preloading) {
+    transition: all 0.3s linear;
+  }
+  
+  body.dark-mode {
+    background-color: #212529;
+    color: #dfe6e9;
+  }
+  
+  body.light-mode {
+    background-color: white;
+    color: #2d3436;
+  }

@@ -1,0 +1,18 @@
+[
+    {
+      "id":"1",
+      "name": "Pizza Pepperoni",
+      "price": 10,
+      "stars": 4.5,
+      "imageUrl": "assets/Farmhouse.jpg",
+      "tags": ["FastFood", "Pizza", "Lunch"]
+    },
+    {
+      "id":"2",
+      "name": "Chicken Biryani",
+      "price": 20,
+      "stars": 4.7,
+      "imageUrl": "assets/ChickenBiryani.webp",
+      "tags": ["SlowFood", "Lunch"]
+    }
+]

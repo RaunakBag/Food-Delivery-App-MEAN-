@@ -1,0 +1,63 @@
+<section>
+  <div class="searchbar input-group d-flex justify-content-center">
+    <div class="form-outline">
+      <input type="search" id="form1" class="form-control" [(ngModel)]="searchValue"
+        [ngModelOptions]="{ standalone: true }" (input)="searchFoods()" />
+    </div>
+
+    <span class="input-group-text border-0" id="search-addon">
+      <i class="fas fa-search"></i>
+    </span>
+  </div>
+
+  <div class="container py-2" *ngFor="let foods of foodItem">
+    <div class="row justify-content-center mb-3">
+      <div class="col-md-12 col-xl-10">
+        <div class="">
+          <div class="card-body" *ngIf="
+              searchValue === '' ||
+              foods.name.toLowerCase().includes(searchValue)
+            ">
+            <div class="row">
+              <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0 card shadow-0 border rounded-3">
+                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                  <img [src]="foods.imageUrl" [alt]="foods.name" class="w-100" />
+                  <a href="#!">
+                    <div class="hover-overlay">
+                      <div class="mask" style="background-color: rgba(253, 253, 253, 0.15)"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-6">
+                <h5>{{ foods.name }}</h5>
+                <div class="d-flex flex-row">
+                  <div class="text-danger mb-1 me-2">
+                    <star-rating [value]="foods.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black"
+                      size="22px" [readonly]="true"></star-rating>
+                  </div>
+                </div>
+                <div class="tags">
+                  <a *ngFor="let tag of foods.tags">
+                    {{ tag }}
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                <div class="d-flex flex-row align-items-center mb-1">
+                  <h4 class="mb-1 me-1">{{ foods.price | currency: "INR" }}</h4>
+                </div>
+                <h6 class="text-success">Free Delivery</h6>
+                <div class="d-flex flex-column mt-4">
+                  <button class="btn btn-outline-danger btn-sm mt-2" type="button" [routerLink]="'detail/' + foods._id">
+                    Show details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

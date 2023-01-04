@@ -1,0 +1,9 @@
+@media only screen and (max-width:767px){
+    .row{
+        justify-content: space-evenly;
+    }
+
+    .foo1, .foo2{
+        text-align: center;
+    }
+}

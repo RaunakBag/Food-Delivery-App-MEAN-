@@ -1,0 +1,37 @@
+<section>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6 col-xl-4">
+        <div class="card text-black" *ngIf="food">
+          <img [src]="food.imageUrl" [alt]="food.name" />
+          <div class="card-body">
+            <div class="text-center">
+              <h5 class="card-title">{{ food.name }}</h5>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between">
+                <span>Rating</span><span>
+                  <star-rating [value]="food.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black"
+                    size="25px" [readonly]="true"></star-rating>
+                </span>
+              </div>
+              <div class="d-flex justify-content-between tags">
+                <span>Tags</span><span><a *ngFor="let tag of food.tags">
+                    {{ tag }}
+                  </a></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Price</span><span>{{ food.price | currency: "INR" }}</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center total font-weight-bold mt-4">
+              <button type="button" class="btn btn-outline-danger" (click)="addToCart()">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

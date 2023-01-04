@@ -1,0 +1,111 @@
+<!-- SignUp Component -->
+<section class="text-center text-lg-start">
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right">
+          <div class="card-body p-5 shadow-5 text-center">
+            <!-- <h2 class="fw-bold mb-5" style="color: #000000;">Sign up now</h2> -->
+            <img src="https://metropolitanhost.com/themes/themeforest/angular/quickmunch/assets/img/logo.png"
+              style="width: 185px" alt="logo" />
+            <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <!-- FIrstName Input -->
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="form3Example1" style="color: #000000;">First name</label>
+                    <input [ngClass]="{
+                        'is-invalid': isSubmitted && f.firstName.errors
+                      }" type="text" id="form3Example1" class="form-control" placeholder="Type here..."
+                      [(ngModel)]="firstName" formControlName="firstName" />
+
+                    <div *ngIf="isSubmitted && f.firstName.errors" class="invalid-feedback">
+                      <div *ngIf="f.firstName.errors.required">
+                        First Name Is Required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- LastName Input -->
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="form3Example2" style="color: #000000;">Last name</label>
+                    <input [ngClass]="{
+                        'is-invalid': isSubmitted && f.lastName.errors
+                      }" type="text" id="form3Example2" class="form-control" placeholder="Type here..."
+                      [(ngModel)]="lastName" formControlName="lastName" />
+
+                    <div *ngIf="isSubmitted && f.lastName.errors" class="invalid-feedback">
+                      <div *ngIf="f.lastName.errors.required">
+                        Last Name Is Required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3" style="color: #000000;">Email address</label>
+                <input [ngClass]="{ 'is-invalid': isSubmitted && f.email.errors }" type="email" id="form3Example3"
+                  class="form-control" placeholder="Type here..." [(ngModel)]="email"
+                  formControlName="email" />
+
+                <div *ngIf="isSubmitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email Is Required</div>
+                </div>
+              </div>
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example4" style="color: #000000;">Password</label>
+                <input [ngClass]="{ 'is-invalid': isSubmitted && f.password.errors }" type="password" id="form3Example4"
+                  class="form-control" placeholder="Type here..." [(ngModel)]="password"
+                  formControlName="password" />
+
+                <div *ngIf="isSubmitted && f.password.errors" class="invalid-feedback">
+                  <div *ngIf="f.password.errors.required">
+                    Password is required
+                  </div>
+                  <div *ngIf="f.password.errors.minlength">
+                    Password must be at least 6 characters
+                  </div>
+                </div>
+              </div>
+              <!-- Password confirm -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example4" style="color: #000000;">Confirm Password</label>
+                <input [ngClass]="{
+                    'is-invalid': isSubmitted && f.confirmPassword.errors
+                  }" type="password" id="form3Example4" class="form-control" placeholder="Type here..."
+                  [(ngModel)]="confirmPassword" formControlName="confirmPassword" />
+
+                <div *ngIf="isSubmitted && f.confirmPassword.errors" class="invalid-feedback">
+                  <div *ngIf="f.confirmPassword.errors.required">
+                    Confirm Password is required
+                  </div>
+                  <div *ngIf="f.confirmPassword.errors.mustMatch">
+                    Passwords must match
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-4">
+                Sign up
+              </button>
+              <!-- This part will route us to the login page if we already have an account -->
+              <p class="small fw-bold mt-2 pt-1 mb-0" style="color: #000000;">
+                Already have an account?
+                <button type="button" class="btn btn-outline-danger" routerLink="/login">
+                  Login
+                </button>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img
+          src="https://us.123rf.com/450wm/somegirl/somegirl1905/somegirl190500113/124101230-authentic-indian-dishes-and-snacks.jpg?ver=6"
+          class="w-100 rounded-4 shadow-4" alt="" />
+      </div>
+    </div>
+  </div>
+</section>

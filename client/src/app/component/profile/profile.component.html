@@ -1,0 +1,55 @@
+<!-- Profile Section of the User -->
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="card mb-3" style="border-radius: 0.5rem">
+          <div class="row g-0">
+            <div class="col-md-4 gradient-custom text-center text-white" style="
+                border-top-left-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              ">
+              <!-- Image of the User -->
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" alt="Avatar"
+                class="img-fluid my-5" style="width: 80px" />
+              <!-- Full Name of the user will be shown -->
+              <h5>{{ firstName + " " + lastName }}</h5>
+              <button class="btn btn-danger" (click)="logout()">Log Out</button>
+            </div>
+            <div class="col-md-8" *ngIf="token">
+              <div class="card-body p-4">
+                <h6 style="color: #000000">Information</h6>
+                <hr class="mt-0 mb-4" />
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6 style="color: #000000">First Name</h6>
+                    <!-- FirstName of the user -->
+                    <p class="text-muted">{{ firstName }}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6 style="color: #000000">Last Name</h6>
+                    <!-- LastName of the user -->
+                    <p class="text-muted">{{ lastName }}</p>
+                  </div>
+                </div>
+                <h6 style="color: #000000">Details</h6>
+                <hr class="mt-0 mb-4" />
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6 style="color: #000000">Email Id</h6>
+                    <!-- Email id of the user -->
+                    <p class="text-muted">{{ email }}</p>
+                  </div>
+                  <!-- <div class="col-6 mb-3">
+                      <h6>Password</h6>
+                      <p class="text-muted">abc</p>
+                    </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

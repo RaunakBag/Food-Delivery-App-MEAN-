@@ -1,0 +1,146 @@
+<!-- 
+<nav class="navbar navbar-expand-lg navbar-dark p-md-3 d-flex justify-content-between fixed-top"
+  aria-label="Offcanvas navbar large">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="logo p-2">
+      <img style="width: 220px"
+        src="https://metropolitanhost.com/themes/themeforest/angular/quickmunch/assets/img/logo.png" routerLink="" />
+    </div>
+    
+    <div class="quicklink">
+      <ul class="navbar-nav justify-content-center flex-grow-1">
+    
+
+        <li class="nav-item dropdown pe-3" *ngIf="token">
+          <button class="dropdown-toggle btn btn-danger dropdown-toggle accbt" type="button" role="button"
+            data-bs-toggle="dropdown" aria-expanded="true">
+            Account
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+              <img src="https://mdbootstrap.com/img/new/avatars/1.webp" class="rounded-circle" height="22" alt=""
+                loading="lazy" />
+              <strong class="d-none d-sm-block ms-1">{{ firstName }}</strong>
+            </a>
+
+            <li>
+              <a class="dropdown-item" href="/profile" style="background-color: dark" routerLink="/profile">Profile</a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="/order" style="background-color: dark" routerLink="/order">Orders</a>
+            </li>
+          </ul>
+        </li>
+        
+        <li class="nav-item pe-3">
+         
+
+          <button type="button" class="btn btn-danger" routerLink="/cart" *ngIf="token">
+            Cart
+            <span class="cartqty">Price: {{ cartPrice | currency: "INR" }} | Quantity:
+              {{ cartQuantity }}</span>
+          </button>
+        </li>
+        <li>
+         
+          <button type="button" class="btn btn-danger" (click)="logout()" *ngIf="token">
+            Log Out
+          </button>
+        </li>
+        
+        <li class="nav-item pe-3">
+         
+          <button type="button" class="btn btn-danger" routerLink="/login" *ngIf="!token">
+            Log In
+          </button>
+        </li>
+       
+        <li class="nav-item pe-3">
+         
+          <button type="button" class="btn btn-danger" routerLink="/signup" *ngIf="!token">
+            SignUp
+          </button>
+        </li>
+        <label class="switch">
+          <input id="darkMode" type="checkbox" [checked]="darkMode$ | async" (change)="onToggle()" class="toggle"
+            checked />
+          <span class="slider round" for="darkMode"></span>
+        </label>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <img style="width: 220px"
+        src="https://metropolitanhost.com/themes/themeforest/angular/quickmunch/assets/img/logo.png" routerLink="" />
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+          <li class="nav-item dropdown pe-3" *ngIf="token">
+            <button class="dropdown-toggle btn btn-danger dropdown-toggle accbt" type="button" role="button"
+              data-bs-toggle="dropdown" aria-expanded="true">
+              Account
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+                <img src="https://mdbootstrap.com/img/new/avatars/1.webp" class="rounded-circle" height="22" alt=""
+                  loading="lazy" />
+                <strong class="d-none d-sm-block ms-1">{{ firstName }}</strong>
+              </a>
+
+              <li>
+                <a class="dropdown-item" href="/profile" style="background-color: dark"
+                  routerLink="/profile">Profile</a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="/order" style="background-color: dark" routerLink="/order">Orders</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item pe-3">
+            <button type="button" class="btn btn-danger" routerLink="/cart" *ngIf="token">
+              Cart
+              <span class="cartqty">Price: {{ cartPrice | currency: "INR" }} | Quantity:
+                {{ cartQuantity }}</span>
+            </button>
+          </li>
+          <li class="nav-item pe-3">
+            <button type="button" class="btn btn-danger" (click)="logout()" *ngIf="token">
+              Log Out
+            </button>
+          </li>
+          <li class="nav-item pe-3">
+            <button type="button" class="btn btn-danger" routerLink="/login" *ngIf="!token">
+              Log In
+            </button>
+          </li>
+          <li class="nav-item pe-3">
+            <button type="button" class="btn btn-danger" routerLink="/signup" *ngIf="!token">
+              SignUp
+            </button>
+          </li>
+          <li class="nav-item">
+            <label class="switch">
+              <input id="darkMode" type="checkbox" [checked]="darkMode$ | async" (change)="onToggle()" class="toggle"
+                checked />
+              <span class="slider round" for="darkMode"></span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

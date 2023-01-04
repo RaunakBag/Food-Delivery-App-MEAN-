@@ -1,0 +1,8 @@
+{
+    id:'1',
+    name: 'Pizza Pepperoni',
+    price: 10,
+    stars: 4.5,
+    imageUrl: 'assets/Farmhouse.jpg',
+    tags: ['FastFood', 'Pizza', 'Lunch'],
+  },
